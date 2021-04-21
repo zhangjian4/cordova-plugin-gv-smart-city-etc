@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="cordova-plugin-gv-smart-city-etc" version="0.1.0"
+    xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>GvSmartCityEtc</name>
+    <js-module name="GvSmartCityEtc" src="www/GvSmartCityEtc.js">
+        <clobbers target="GvSmartCityEtc" />
+    </js-module>
+    <platform name="android">
+        <config-file parent="/*" target="res/xml/config.xml">
+            <feature name="GvSmartCityEtc">
+                <param name="android-package" value="com.benbenjun.cordova.gv.GvSmartCityEtc" />
+            </feature>
+        </config-file>
+        <config-file parent="/*" target="AndroidManifest.xml">
+            <uses-permission android:name="android.permission.INTERNET" />
+        </config-file>
+        <source-file src="src/android/GvSmartCityEtc.java" target-dir="src/com/benbenjun/cordova/gv/GvSmartCityEtc" />
+        <source-file src="src/android/libs/armeabi/libm910b.so" target-dir="libs/armeabi"/>
+        <source-file src="src/android/libs/armeabi/libserial_port.so" target-dir="libs/armeabi"/>
+        <source-file src="src/android/libs/armeabi-v7a/libm910b.so" target-dir="libs/armeabi-v7a"/>
+        <source-file src="src/android/libs/armeabi-v7a/libserial_port.so" target-dir="libs/armeabi-v7a"/>
+        <source-file src="src/android/libs/GvSmartCityEtcSDK_Common_V2.0.5.jar" target-dir="libs"/>
+        <framework src="com.squareup.okhttp3:okhttp:3.9.0" />
+        <framework src="com.squareup.okio:okio:1.13.0" />
+        <framework src="com.google.code.gson:gson:2.8.6" />
+        <framework src="org.jodd:jodd-bean:5.1.5" />
+        <framework src="com.google.zxing:core:3.3.0" />
+    </platform>
+</plugin>
