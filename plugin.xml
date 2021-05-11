@@ -11,11 +11,15 @@
             <feature name="GvSmartCityEtc">
                 <param name="android-package" value="com.benbenjun.cordova.gv.GvSmartCityEtc" />
             </feature>
+            <feature name="ETC">
+                <param name="android-package" value="com.benbenjun.cordova.gv.ETC" />
+            </feature>
         </config-file>
         <config-file parent="/*" target="AndroidManifest.xml">
             <uses-permission android:name="android.permission.INTERNET" />
         </config-file>
-        <source-file src="src/android/GvSmartCityEtc.java" target-dir="src/com/benbenjun/cordova/gv/GvSmartCityEtc" />
+        <source-file src="src/android/GvSmartCityEtc.java" target-dir="src/com/benbenjun/cordova/gv" />
+        <source-file src="src/android/ETC.java" target-dir="src/com/benbenjun/cordova/gv" />
         <source-file src="src/android/libs/armeabi/libm910b.so" target-dir="libs/armeabi"/>
         <source-file src="src/android/libs/armeabi/libserial_port.so" target-dir="libs/armeabi"/>
         <source-file src="src/android/libs/armeabi-v7a/libm910b.so" target-dir="libs/armeabi-v7a"/>

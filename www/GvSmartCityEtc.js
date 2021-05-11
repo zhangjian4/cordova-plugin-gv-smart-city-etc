@@ -1,6 +1,6 @@
 var exec = require("cordova/exec");
 
-exports.printer = {
+const printer = {
   // 连接打印机
   openConnection: function (success, error) {
     exec(success, error, "GvSmartCityEtc", "openConnection", []);
@@ -102,3 +102,41 @@ exports.printer = {
     ]);
   },
 };
+
+const etc = {
+  // 获取OBU个体信息+用户卡信息
+  getEtcInfo: function (success, error) {
+    exec(success, error, "ETC", "getEtcInfo", []);
+  },
+  //获取ETC车辆信息(明文)
+  getObuVehInfo: function (keyChannel, success, error) {
+    exec(success, error, "ETC", "getObuVehInfo", [keyChannel]);
+  },
+  //获取ETC车辆信息(密文)
+  getObuVehCiphertext: function (success, error) {
+    exec(success, error, "ETC", "getObuVehCiphertext", []);
+  },
+  //执行ETC扣费指令接口
+  consume: function (keyChannel, vehiclePlateNumber, payMoney, success, error) {
+    exec(success, error, "ETC", "consume", [
+      keyChannel,
+      vehiclePlateNumber,
+      payMoney,
+    ]);
+  },
+  //启用调试日志
+  enableDebugLogger: function (enableLogger, success, error) {
+    exec(success, error, "ETC", "enableDebugLogger", [enableLogger]);
+  },
+  //设置PSAM配置
+  setPsamConfig: function (config, success, error) {
+    exec(success, error, "ETC", "setPsamConfig", [config]);
+  },
+  //是否启用校验OBU
+  isVerifyObu: function (status, success, error) {
+    exec(success, error, "ETC", "isVerifyObu", [status]);
+  },
+};
+
+exports.printer = printer;
+exports.etc = etc;
