@@ -19,3 +19,19 @@ GvSmartCityEtc.printer.openConnection(
         console.error(error);
     });
 ```
+
+## ETC接口
+1. 获取OBU个体信息+用户卡信息
+   ```javascript
+   GvSmartCityEtc.etc.getEtcInfo(successCallback,errorCallback);
+   ```
+### Example
+```javascript
+GvSmartCityEtc.etc.getEtcInfo(
+    function(result){
+        console.log(result);
+    },
+    function(error){
+        console.error(error);
+    });
+```
