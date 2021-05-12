@@ -28,8 +28,10 @@ public class ETC extends CordovaPlugin {
 
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
-        if (this.etcParkingChargeAPI == null) {
-            this.etcParkingChargeAPI = EtcParkingChargeAPI.getInstance(this.cordova.getContext());
+        synchronized (this){
+            if (this.etcParkingChargeAPI == null) {
+                this.etcParkingChargeAPI = EtcParkingChargeAPI.getInstance(this.cordova.getContext());
+            }
         }
         // 获取OBU个体信息+用户卡信息
         if (action.equals("getEtcInfo")) {

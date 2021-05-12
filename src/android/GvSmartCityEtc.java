@@ -18,8 +18,10 @@ public class GvSmartCityEtc extends CordovaPlugin {
 
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
-        if(this.mPrinter==null){
-            this.mPrinter=PrinterInstance.getInstance(this.cordova.getActivity());
+        synchronized (this){
+            if(this.mPrinter==null){
+                this.mPrinter=PrinterInstance.getInstance(this.cordova.getActivity());
+            }
         }
         // 连接打印机
         if (action.equals("openConnection")) {
