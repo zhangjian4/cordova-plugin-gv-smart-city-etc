@@ -29,6 +29,5 @@
         <framework src="com.squareup.okio:okio:1.13.0" />
         <framework src="com.google.code.gson:gson:2.8.6" />
         <framework src="org.jodd:jodd-bean:5.1.5" />
-        <framework src="com.google.zxing:core:3.3.0" />
     </platform>
 </plugin>
