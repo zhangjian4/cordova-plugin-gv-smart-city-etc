@@ -1,5 +1,7 @@
 package com.benbenjun.cordova.gv;
 
+import com.android.print.sdk.PrinterInstance;
+
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.CallbackContext;
 
@@ -7,7 +9,6 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import com.genvict.printer.sdk.PrinterInstance;
 
 /**
  * This class echoes a string called from JavaScript.
